@@ -23,7 +23,7 @@ if (!$conn) {
 
 ?>
 <body>
-
+<!-- Creas la tabla en el html, estructura visual -->
 <table border="1" cellpadding="2" cellspacing="2">
   <tr>
     <td>ID</td>
@@ -36,13 +36,16 @@ if (!$conn) {
 $result = mysqli_query($conn, "SELECT * FROM usuarios");
 
 //Mientras que existan datos en el resultado de la funcion mysqli anterior, 
-//se guardan en el arreglo $query_data
-while($query_data = mysqli_fetch_row($result)) {
+//se guardan en el arreglo $datos
+while($datos = mysqli_fetch_row($result)) {
   echo "<tr>";
   //Visitas cada campo de la BD con cada indice del arreglo
-  echo "<td>",$query_data[0], "</td>",
-       "<td>",$query_data[1], "</td>",
-       "<td>",$query_data[2], "</td>";
+  //
+  //Ligas cada TD con los de la tabla creada en el html ya que la consulta la realizamos dentro de
+  //la propia tabla, solo creamos la misma estructura de la tabla pero en el php y publicar los datos
+  echo "<td>",$datos[0], "</td>",
+       "<td>",$datos[1], "</td>",
+       "<td>",$datos[2], "</td>";
   echo "</tr>";
 }
 ?>
