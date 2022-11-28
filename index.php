@@ -42,7 +42,7 @@ while($datos = mysqli_fetch_row($result)) {
   //Visitas cada campo de la BD con cada indice del arreglo
   //
   //Ligas cada TD con los de la tabla creada en el html ya que la consulta la realizamos dentro de
-  //la propia tabla, solo creamos la misma estructura de la tabla pero en el php y publicar los datos
+  //la propia tabla, solo creamos la misma estructura de la tabla pero en el php e insertas los datos
   echo "<td>",$datos[0], "</td>",
        "<td>",$datos[1], "</td>",
        "<td>",$datos[2], "</td>";
